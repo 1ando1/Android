@@ -3,7 +3,6 @@ package com.example.myapp;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +12,7 @@ import com.example.myapp.application.HomeApplication;
 import com.example.myapp.category.CategoriesAdapter;
 import com.example.myapp.constants.Urls;
 import com.example.myapp.dto.category.CategoryItemDTO;
+import com.example.myapp.service.BaseActivity;
 import com.example.myapp.service.CategoryNetwork;
 import com.example.myshop.R;
 
@@ -23,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     CategoriesAdapter adapter;
     RecyclerView rc;
