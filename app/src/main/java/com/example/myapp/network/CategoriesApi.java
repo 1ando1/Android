@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 public interface CategoriesApi {
     @GET("/api/categories/list")
     public Call<List<CategoryItemDTO>> list();
+    //постимо задану нами категорію на сервер
     @POST("/api/categories/create")
     public Call<Void> create(@Body CategoryCreateDTO model);
 }

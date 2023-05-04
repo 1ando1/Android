@@ -23,6 +23,7 @@ public class BaseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
         switch (item.getItemId()) {
+            //перехід на головну через меню
             case R.id.m_home:
                 try {
                     intent = new Intent(BaseActivity.this, MainActivity.class);
@@ -33,6 +34,7 @@ public class BaseActivity extends AppCompatActivity {
                     System.out.println("--Problem--"+ex.getMessage());
                 }
                 return true;
+            //перехід на сторінку створення категорії через меню
             case R.id.m_create:
                 try {
                     intent = new Intent(BaseActivity.this, CategoryCreateActivity.class);

@@ -19,6 +19,7 @@ public class ChangeImageActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
     private CropView cropView;
 
+    //добавляємо картинку
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class ChangeImageActivity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, "Select image"), PICK_IMAGE);
     }
 
+    //виводимо картинку на ImageView
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -46,18 +48,22 @@ public class ChangeImageActivity extends AppCompatActivity {
             finish();
     }
 
+    //відміна дії
     public void onClickCancel(View view) {
         finish();
     }
 
+    //поворот картинки вліво на 90 градусів
     public void onClickLeft(View view) {
         cropView.setRotation(cropView.getRotation()-90);
     }
 
+    //поворот картинки вправо на 90 градусів
     public void onClickRight(View view) {
         cropView.setRotation(cropView.getRotation()+90);
     }
 
+    //підтвердження змін
     public void onClickCrop(View view) {
         String fileTemp = java.util.UUID.randomUUID().toString();
         Bitmap croppedBitmap = cropView.getOutput();

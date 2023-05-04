@@ -33,6 +33,7 @@ public class CategoryCreateActivity extends BaseActivity {
     TextInputEditText txtCategoryPriority;
     TextInputEditText txtCategoryDescription;
 
+    //зберігаємо введені дані
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +44,13 @@ public class CategoryCreateActivity extends BaseActivity {
         txtCategoryDescription = findViewById(R.id.txtCategoryDescription);
     }
 
+    //вибір фотографії
     public void onClickSelectImage(View view) {
         Intent intent = new Intent(this, ChangeImageActivity.class);
         startActivityForResult(intent, SELECT_IMAGE_RESULT);
     }
 
+    //
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -57,6 +60,7 @@ public class CategoryCreateActivity extends BaseActivity {
         }
     }
 
+    //зберігаємо категорію на сервер
     public void onClickSave(View view) {
         CategoryCreateDTO model = new CategoryCreateDTO();
         model.setName(txtCategoryName.getText().toString());
