@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.example.myapp.MainActivity;
 import com.example.myapp.dto.category.CategoryCreateDTO;
 import com.example.myapp.service.BaseActivity;
-import com.example.myapp.service.CategoryNetwork;
+import com.example.myapp.service.ApplicationNetwork;
 import com.example.myapp.service.ChangeImageActivity;
 import com.example.myshop.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -68,8 +68,8 @@ public class CategoryCreateActivity extends BaseActivity {
         model.setDescription(txtCategoryDescription.getText().toString());
         model.setImageBase64(uriGetBase64(uri));
 
-        CategoryNetwork.getInstance()
-                .getJsonApi()
+        ApplicationNetwork.getInstance()
+                .getCategoriesApi()
                 .create(model)
                 .enqueue(new Callback<Void>() {
                     @Override
