@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/m_home"
-        android:title="Main"
-        />
-    <item
-        android:id="@+id/m_create"
-        android:title="Add"
-        />
+    <group
+        android:id="@+id/group_anonimus"
+        android:visible="true">
+        <item
+            android:id="@+id/m_register"
+            android:title="Registration" />
+
+        <item
+            android:id="@+id/m_login"
+            android:title="Sign In" />
+    </group>
+
+    <group
+        android:id="@+id/group_auth"
+        android:visible="false">
+        <item
+            android:id="@+id/m_home"
+            android:title="Main" />
+
+        <item
+            android:id="@+id/m_create"
+            android:title="Add" />
+        <item
+            android:id="@+id/m_logout"
+            android:title="Log Out" />
+    </group>
 </menu>
